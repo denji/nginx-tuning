@@ -193,6 +193,7 @@ Happy Hacking!
 * https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/
 * https://www.nginx.com/blog/10-tips-for-10x-application-performance/
 * https://www.nginx.com/blog/http-keepalives-and-web-performance/
+* https://www.nginx.com/blog/overcoming-ephemeral-port-exhaustion-nginx-plus/
 * https://nginx.org/r/pcre_jit
 * https://nginx.org/r/ssl_engine (`openssl engine -t `)
 * https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
