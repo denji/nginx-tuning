@@ -213,6 +213,7 @@ Syntax highlighting
 -------------------
 * https://github.com/chr4/sslsecure.vim
 * https://github.com/chr4/nginx.vim
+* https://github.com/nginx/nginx/tree/master/contrib/vim
 
 NGINX config formatter
 ----------------------
