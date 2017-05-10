@@ -180,7 +180,10 @@ Socket Sharding in NGINX 1.9.1+ (DragonFly BSD and Linux 3.9+)
 Without [`sendfile_max_chunk`](https://nginx.org/r/sendfile_max_chunk) limit, one fast connection may seize the worker process entirely.
 
 Happy Hacking!
---------------
+==============
+
+Reference links
+---------------
 
 * http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
 * https://www.keycdn.com/support/tcp-fast-open/
@@ -201,3 +204,17 @@ Happy Hacking!
 * https://www.nginx.com/blog/tuning-nginx/
 * https://www.maxcdn.com/blog/nginx-application-performance-optimization/
 * https://www.linode.com/docs/websites/nginx/configure-nginx-for-optimized-performance
+
+Static analyzers
+----------------
+* https://github.com/yandex/gixy
+
+Syntax highlighting
+-------------------
+* https://github.com/chr4/sslsecure.vim
+* https://github.com/chr4/nginx.vim
+
+NGINX config formatter
+----------------------
+* https://github.com/1connect/nginx-config-formatter
+* https://github.com/lovette/nginx-tools/tree/master/nginx-minify-conf
