@@ -198,6 +198,7 @@ Reference links
 * https://www.nginx.com/blog/http-keepalives-and-web-performance/
 * https://www.nginx.com/blog/overcoming-ephemeral-port-exhaustion-nginx-plus/
 * https://www.nginx.com/blog/tcp-load-balancing-udp-load-balancing-nginx-tips-tricks/
+* https://www.nginx.com/blog/introducing-cicd-with-nginx-and-nginx-plus/
 * https://nginx.org/r/pcre_jit
 * https://nginx.org/r/ssl_engine (`openssl engine -t `)
 * https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
