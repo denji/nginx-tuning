@@ -109,7 +109,7 @@ Just For Security Reason
 server_tokens off;
 ```
 
-Nginx Simple DDoS Defense
+NGINX Simple DDoS Defense
 -------------------------
 
 This is far away from secure DDoS defense but can slow down some small DDoS. Those configs are also in test environment and you should do your values.
@@ -158,6 +158,52 @@ nginx -s reload
 
 You can test this configuration with `tsung` and when you are satisfied with result you can hit `Ctrl+C` because it can run for hours.
 
+Increase The Maximum Number Of Open Files (`nofile` limit) – Linux
+-----------------------------------------------
+
+Two ways to raise the nofile/max open files/file descriptors/file handles limit for NGINX in RHEL/CentOS 7+.
+With NGINX running, checking current limit on master process
+
+    $ cat /proc/$(cat /var/run/nginx.pid)/limits | grep open.files
+    Max open files            1024                 4096                 files
+
+#### And worker processes
+
+    ps --ppid $(cat /var/run/nginx.pid) -o %p|sed '1d'|xargs -I{} cat /proc/{}/limits|grep open.files
+    
+    Max open files            1024                 4096                 files     
+    Max open files            1024                 4096                 files 
+
+Trying with the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/nginx.conf` fails as SELinux policy doesn't allow `setrlimit`. This is shown in `/var/log/nginx/error.log`
+
+    015/07/24 12:46:40 [alert] 12066#0: setrlimit(RLIMIT_NOFILE, 2342) failed (13: Permission denied)
+
+#### And in /var/log/audit/audit.log
+
+    type=AVC msg=audit(1437731200.211:366): avc:  denied  { setrlimit } for  pid=12066 comm="nginx" scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:system_r:httpd_t:s0 tclass=process
+    
+#### `nolimit` without Systemd
+
+    $ nano /etc/security/limits.d/nginx.conf
+    nginx   soft    nofile  65536
+    nginx   hard    nofile  65536
+    $ sysctl -p
+
+#### `nolimit` with Systemd
+
+    $ mkdir -p /etc/systemd/system/nginx.service.d
+    $ nano /etc/security/limits.d/nginx.conf
+    [Service]
+    LimitNOFILE=30000
+    $ systemctl daemon-reload
+    $ systemctl restart nginx.service
+
+#### SELinux boolean `httpd_setrlimit` to true(1)
+
+This will set fd limits for the worker processes. Leave the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/nginx.conf` and run the following as root
+
+    setsebool -P httpd_setrlimit 1
+
 DoS [HTTP/1.1 and above: Range Requests](https://tools.ietf.org/html/rfc7233#section-6.1)
 ----------------------------------------
 
@@ -189,6 +235,8 @@ Reference links
 * https://www.keycdn.com/support/tcp-fast-open/
  * https://www.masv.io/enabling-tcp-fast-open-nginx-centos-7/
 * ~~https://www.52os.net/articles/nginx-anti-ddos-setting-2.html~~
+* https://ospi.fi/blog/centos-7-raise-nofile-limit-for-nginx.html
+* https://www.nginx.com/blog/nginx-se-linux-changes-upgrading-rhel-6-6/
 * https://github.com/h5bp/server-configs-nginx
 * https://github.com/nginx-boilerplate/nginx-boilerplate
 * https://www.nginx.com/blog/thread-pools-boost-performance-9x/
