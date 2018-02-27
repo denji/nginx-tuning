@@ -45,47 +45,49 @@ events {
     multi_accept on;
 }
 
-# cache informations about FDs, frequently accessed files
-# can boost performance, but you need to test those values
-open_file_cache max=200000 inactive=20s; 
-open_file_cache_valid 30s; 
-open_file_cache_min_uses 2;
-open_file_cache_errors on;
+http {
+    # cache informations about FDs, frequently accessed files
+    # can boost performance, but you need to test those values
+    open_file_cache max=200000 inactive=20s; 
+    open_file_cache_valid 30s; 
+    open_file_cache_min_uses 2;
+    open_file_cache_errors on;
 
-# to boost I/O on HDD we can disable access logs
-access_log off;
+    # to boost I/O on HDD we can disable access logs
+    access_log off;
 
-# copies data between one FD and other from within the kernel
-# faster then read() + write()
-sendfile on;
+    # copies data between one FD and other from within the kernel
+    # faster then read() + write()
+    sendfile on;
 
-# send headers in one peace, its better then sending them one by one 
-tcp_nopush on;
+    # send headers in one peace, its better then sending them one by one 
+    tcp_nopush on;
 
-# don't buffer data sent, good for small data bursts in real time
-tcp_nodelay on;
+    # don't buffer data sent, good for small data bursts in real time
+    tcp_nodelay on;
 
-# reduce the data that needs to be sent over network -- for testing environment
-gzip on;
-gzip_min_length 10240;
-gzip_proxied expired no-cache no-store private auth;
-gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/json application/xml;
-gzip_disable msie6;
+    # reduce the data that needs to be sent over network -- for testing environment
+    gzip on;
+    gzip_min_length 10240;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/json application/xml;
+    gzip_disable msie6;
 
-# allow the server to close connection on non responding client, this will free up memory
-reset_timedout_connection on;
+    # allow the server to close connection on non responding client, this will free up memory
+    reset_timedout_connection on;
 
-# request timed out -- default 60
-client_body_timeout 10;
+    # request timed out -- default 60
+    client_body_timeout 10;
 
-# if client stop responding, free up memory -- default 60
-send_timeout 2;
+    # if client stop responding, free up memory -- default 60
+    send_timeout 2;
 
-# server will close connection after this time -- default 75
-keepalive_timeout 30;
+    # server will close connection after this time -- default 75
+    keepalive_timeout 30;
 
-# number of requests client can make over keep-alive -- for testing environment
-keepalive_requests 100000;
+    # number of requests client can make over keep-alive -- for testing environment
+    keepalive_requests 100000;
+}
 ```
 
 Now you can save config and run bottom [command](https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/#stopping-or-restarting-nginx)
