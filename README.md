@@ -243,6 +243,7 @@ Reference links
 * https://github.com/nginx-boilerplate/nginx-boilerplate
 * https://www.nginx.com/blog/thread-pools-boost-performance-9x/
 * https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/
+* https://www.nginx.com/blog/nginx-1-13-9-http2-server-push/
 * https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/
 * https://www.nginx.com/blog/10-tips-for-10x-application-performance/
 * https://www.nginx.com/blog/http-keepalives-and-web-performance/
