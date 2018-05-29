@@ -271,3 +271,7 @@ NGINX config formatter
 ----------------------
 * https://github.com/1connect/nginx-config-formatter
 * https://github.com/lovette/nginx-tools/tree/master/nginx-minify-conf
+
+NGINX configuration tools
+-------------------------
+* https://github.com/nginxinc/crossplane
