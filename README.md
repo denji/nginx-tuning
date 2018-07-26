@@ -227,6 +227,23 @@ Socket Sharding in NGINX 1.9.1+ (DragonFly BSD and Linux 3.9+)
 [Multi-threaded](https://nginx.org/r/aio) sending of files is currently supported only Linux.
 Without [`sendfile_max_chunk`](https://nginx.org/r/sendfile_max_chunk) limit, one fast connection may seize the worker process entirely.
 
+Selecting an upstream based on SSL protocol version
+---------------------------------------------------
+```nginx
+map $ssl_preread_protocol $upstream {
+    ""        ssh.example.com:22;
+    "TLSv1.2" new.example.com:443;
+    default   tls.example.com:443;
+}
+
+# ssh and https on the same port
+server {
+    listen      192.168.0.1:443;
+    proxy_pass  $upstream;
+    ssl_preread on;
+}
+```
+
 Happy Hacking!
 ==============
 
