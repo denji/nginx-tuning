@@ -38,7 +38,7 @@ events {
     # max clients is also limited by the number of socket connections available on the system (~64k)
     worker_connections 4000;
 
-    # optmized to serve many clients with each thread, essential for linux -- for testing environment
+    # optimized to serve many clients with each thread, essential for linux -- for testing environment
     use epoll;
 
     # accept as many connections as possible, may flood worker connections if set too low -- for testing environment
@@ -48,8 +48,8 @@ events {
 http {
     # cache informations about FDs, frequently accessed files
     # can boost performance, but you need to test those values
-    open_file_cache max=200000 inactive=20s; 
-    open_file_cache_valid 30s; 
+    open_file_cache max=200000 inactive=20s;
+    open_file_cache_valid 30s;
     open_file_cache_min_uses 2;
     open_file_cache_errors on;
 
@@ -57,10 +57,10 @@ http {
     access_log off;
 
     # copies data between one FD and other from within the kernel
-    # faster then read() + write()
+    # faster than read() + write()
     sendfile on;
 
-    # send headers in one peace, its better then sending them one by one 
+    # send headers in one piece, it is better than sending them one by one
     tcp_nopush on;
 
     # don't buffer data sent, good for small data bursts in real time
@@ -133,7 +133,7 @@ server {
 # request body is written into a temporary file
 client_body_buffer_size  128k;
 
-# headerbuffer size for the request header from client -- for testing environment
+# buffer size for reading client request header -- for testing environment
 client_header_buffer_size 3m;
 
 # maximum number and size of buffers for large headers to read from client request
@@ -172,9 +172,9 @@ With NGINX running, checking current limit on master process
 #### And worker processes
 
     ps --ppid $(cat /var/run/nginx.pid) -o %p|sed '1d'|xargs -I{} cat /proc/{}/limits|grep open.files
-    
-    Max open files            1024                 4096                 files     
-    Max open files            1024                 4096                 files 
+
+    Max open files            1024                 4096                 files
+    Max open files            1024                 4096                 files
 
 Trying with the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/nginx.conf` fails as SELinux policy doesn't allow `setrlimit`. This is shown in `/var/log/nginx/error.log`
 
@@ -183,7 +183,7 @@ Trying with the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/ngi
 #### And in /var/log/audit/audit.log
 
     type=AVC msg=audit(1437731200.211:366): avc:  denied  { setrlimit } for  pid=12066 comm="nginx" scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:system_r:httpd_t:s0 tclass=process
-    
+
 #### `nolimit` without Systemd
 
     $ nano /etc/security/limits.d/nginx.conf
