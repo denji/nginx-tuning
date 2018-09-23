@@ -68,10 +68,29 @@ http {
 
     # reduce the data that needs to be sent over network -- for testing environment
     gzip on;
+    # gzip_static on;
     gzip_min_length 10240;
-    gzip_proxied expired no-cache no-store private auth;
-    gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/json application/xml;
+    gzip_comp_level 1;
+    gzip_vary on;
     gzip_disable msie6;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_types
+        # text/html is always compressed by HttpGzipModule
+        text/css
+        text/javascript
+        text/xml
+        text/plain
+        text/x-component
+        application/javascript
+        application/x-javascript
+        application/json
+        application/xml
+        application/rss+xml
+        application/atom+xml
+        font/truetype
+        font/opentype
+        application/vnd.ms-fontobject
+        image/svg+xml;
 
     # allow the server to close connection on non responding client, this will free up memory
     reset_timedout_connection on;
