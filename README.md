@@ -312,3 +312,19 @@ NGINX config formatter
 NGINX configuration tools
 -------------------------
 * https://github.com/nginxinc/crossplane
+
+BBR (Linux 4.9+)
+----------------
+* https://blog.cloudflare.com/http-2-prioritization-with-nginx/
+* Linux v4.13+ as no longer required FQ (`q_disc`) with BBR.
+* https://github.com/google/bbr/blob/master/Documentation/bbr-quick-start.md
+* https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/?id=218af599fa635b107cfe10acf3249c4dfe5e4123
+* https://github.com/systemd/systemd/issues/9725#issuecomment-413369212
+* If the latest Linux kernel distribution does not have `tcp_bbr` enabled by default:
+```sh
+modprobe tcp_bbr && echo 'tcp_bbr' >> /etc/modules-load.d/bbr.conf
+echo 'net.ipv4.tcp_congestion_control=bbr' >> /etc/sysctl.d/99-bbr.conf
+# Recommended for production, but with  Linux v4.13rc1+ can be used not only in FQ (`q_disc') in BBR mode.
+echo 'net.core.default_qdisc=fq' >> /etc/sysctl.d/99-bbr.conf
+sysctl --system
+```
