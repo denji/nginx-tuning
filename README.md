@@ -312,6 +312,7 @@ NGINX config formatter
 NGINX configuration tools
 -------------------------
 * https://github.com/nginxinc/crossplane
+* https://github.com/valentinxxx/nginxconfig.io
 
 BBR (Linux 4.9+)
 ----------------
