@@ -213,7 +213,7 @@ Trying with the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/ngi
 #### `nolimit` with Systemd
 
     $ mkdir -p /etc/systemd/system/nginx.service.d
-    $ nano /etc/security/limits.d/nginx.conf
+    $ nano /etc/systemd/system/nginx.service.d/nginx.conf
     [Service]
     LimitNOFILE=30000
     $ systemctl daemon-reload
