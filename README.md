@@ -294,6 +294,7 @@ Reference links
 * https://www.maxcdn.com/blog/nginx-application-performance-optimization/
 * https://www.linode.com/docs/websites/nginx/configure-nginx-for-optimized-performance
 * https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/
+* https://medium.freecodecamp.org/a8afdbfde64d
 
 Static analyzers
 ----------------
