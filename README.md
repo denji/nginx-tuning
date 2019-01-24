@@ -213,7 +213,7 @@ Trying with the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/ngi
 #### `nolimit` with Systemd
 
     $ mkdir -p /etc/systemd/system/nginx.service.d
-    $ nano /etc/security/limits.d/nginx.conf
+    $ nano /etc/systemd/system/nginx.service.d/nginx.conf
     [Service]
     LimitNOFILE=30000
     $ systemctl daemon-reload
@@ -269,6 +269,7 @@ Happy Hacking!
 Reference links
 ---------------
 
+* https://8gwifi.org/docs/nginx-secure.jsp
 * http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
 * https://www.keycdn.com/support/tcp-fast-open/
  * https://www.masv.io/enabling-tcp-fast-open-nginx-centos-7/
@@ -293,6 +294,7 @@ Reference links
 * https://www.maxcdn.com/blog/nginx-application-performance-optimization/
 * https://www.linode.com/docs/websites/nginx/configure-nginx-for-optimized-performance
 * https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/
+* https://medium.freecodecamp.org/a8afdbfde64d
 
 Static analyzers
 ----------------
@@ -323,8 +325,5 @@ BBR (Linux 4.9+)
 * If the latest Linux kernel distribution does not have `tcp_bbr` enabled by default:
 ```sh
 modprobe tcp_bbr && echo 'tcp_bbr' >> /etc/modules-load.d/bbr.conf
-echo 'net.ipv4.tcp_congestion_control=bbr' >> /etc/sysctl.d/99-tuning.conf
-# Recommended for production, but with  Linux v4.13rc1+ can be used not only in FQ (`q_disc') in BBR mode.
-echo 'net.core.default_qdisc=fq' >> /etc/sysctl.conf
 sysctl --system
 ```
