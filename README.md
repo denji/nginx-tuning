@@ -269,6 +269,7 @@ Happy Hacking!
 Reference links
 ---------------
 
+* https://github.com/trimstray/nginx-quick-reference
 * https://8gwifi.org/docs/nginx-secure.jsp
 * http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
 * https://www.keycdn.com/support/tcp-fast-open/
