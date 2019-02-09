@@ -270,6 +270,7 @@ Reference links
 ---------------
 
 * https://github.com/GrrrDog/weird_proxies/wiki/nginx
+* https://gist.github.com/denji/9130d1c95e350c58bc50e4b3a9e29bf4
 * https://github.com/trimstray/nginx-quick-reference
 * https://8gwifi.org/docs/nginx-secure.jsp
 * http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
