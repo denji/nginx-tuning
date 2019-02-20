@@ -269,6 +269,7 @@ Happy Hacking!
 Reference links
 ---------------
 
+* https://gist.github.com/CMCDragonkai/6bfade6431e9ffb7fe88
 * https://github.com/GrrrDog/weird_proxies/wiki/nginx
 * https://gist.github.com/denji/9130d1c95e350c58bc50e4b3a9e29bf4
 * https://github.com/trimstray/nginx-quick-reference
