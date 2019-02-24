@@ -300,6 +300,7 @@ Reference links
 * https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/
 * https://medium.freecodecamp.org/a8afdbfde64d
 * https://medium.freecodecamp.org/secure-your-web-application-with-these-http-headers-fd66e0367628
+* https://openresty.org/download/agentzh-nginx-tutorials-en.html
 
 Static analyzers
 ----------------
