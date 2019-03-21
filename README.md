@@ -275,8 +275,8 @@ Reference links
 * https://github.com/trimstray/nginx-quick-reference
 * https://8gwifi.org/docs/nginx-secure.jsp
 * http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
-* https://www.keycdn.com/support/tcp-fast-open/
- * https://www.masv.io/enabling-tcp-fast-open-nginx-centos-7/
+* ~https://www.keycdn.com/support/tcp-fast-open/~
+ * ~https://www.masv.io/enabling-tcp-fast-open-nginx-centos-7/~
 * ~~https://www.52os.net/articles/nginx-anti-ddos-setting-2.html~~
 * https://ospi.fi/blog/centos-7-raise-nofile-limit-for-nginx.html
 * https://www.nginx.com/blog/nginx-se-linux-changes-upgrading-rhel-6-6/
