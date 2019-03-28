@@ -275,9 +275,6 @@ Reference links
 * https://github.com/trimstray/nginx-quick-reference
 * https://8gwifi.org/docs/nginx-secure.jsp
 * http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
-* ~https://www.keycdn.com/support/tcp-fast-open/~
- * ~https://www.masv.io/enabling-tcp-fast-open-nginx-centos-7/~
-* ~~https://www.52os.net/articles/nginx-anti-ddos-setting-2.html~~
 * https://ospi.fi/blog/centos-7-raise-nofile-limit-for-nginx.html
 * https://www.nginx.com/blog/nginx-se-linux-changes-upgrading-rhel-6-6/
 * https://github.com/h5bp/server-configs-nginx
@@ -291,6 +288,7 @@ Reference links
 * https://www.nginx.com/blog/overcoming-ephemeral-port-exhaustion-nginx-plus/
 * https://www.nginx.com/blog/tcp-load-balancing-udp-load-balancing-nginx-tips-tricks/
 * https://www.nginx.com/blog/introducing-cicd-with-nginx-and-nginx-plus/
+* https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers/
 * https://nginx.org/r/pcre_jit
 * https://nginx.org/r/ssl_engine (`openssl engine -t `)
 * https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
