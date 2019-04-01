@@ -289,6 +289,7 @@ Reference links
 * https://www.nginx.com/blog/tcp-load-balancing-udp-load-balancing-nginx-tips-tricks/
 * https://www.nginx.com/blog/introducing-cicd-with-nginx-and-nginx-plus/
 * https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers/
+* https://www.nginx.com/blog/smart-efficient-byte-range-caching-nginx/
 * https://nginx.org/r/pcre_jit
 * https://nginx.org/r/ssl_engine (`openssl engine -t `)
 * https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
