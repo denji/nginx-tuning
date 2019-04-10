@@ -205,6 +205,8 @@ Trying with the `worker_rlimit_nofile` directive in `{,/usr/local}/etc/nginx/ngi
 
 #### `nolimit` without Systemd
 
+    # /etc/security/limits.conf
+    # /etc/default/nginx (ULIMIT)
     $ nano /etc/security/limits.d/nginx.conf
     nginx   soft    nofile  65536
     nginx   hard    nofile  65536
