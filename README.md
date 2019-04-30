@@ -303,6 +303,7 @@ Reference links
 * https://medium.freecodecamp.org/secure-your-web-application-with-these-http-headers-fd66e0367628
 * https://openresty.org/download/agentzh-nginx-tutorials-en.html
 * https://github.com/intel/asynch_mode_nginx
+* https://github.com/leandromoreira/linux-network-performance-parameters
 
 Static analyzers
 ----------------
