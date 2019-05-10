@@ -271,15 +271,10 @@ Happy Hacking!
 Reference links
 ---------------
 
-* __https://gist.github.com/denji/9130d1c95e350c58bc50e4b3a9e29bf4__
-* https://gist.github.com/CMCDragonkai/6bfade6431e9ffb7fe88
-* https://github.com/GrrrDog/weird_proxies/wiki/nginx
-* https://github.com/trimstray/nginx-quick-reference
-* https://8gwifi.org/docs/nginx-secure.jsp
-* http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
-* https://ospi.fi/blog/centos-7-raise-nofile-limit-for-nginx.html
-* https://www.nginx.com/blog/nginx-se-linux-changes-upgrading-rhel-6-6/
-* https://github.com/h5bp/server-configs-nginx
+* __https://github.com/trimstray/nginx-quick-reference__
+* __https://github.com/GrrrDog/weird_proxies/wiki/nginx__
+* __https://github.com/h5bp/server-configs-nginx__
+* __https://github.com/leandromoreira/linux-network-performance-parameters__
 * https://github.com/nginx-boilerplate/nginx-boilerplate
 * https://www.nginx.com/blog/thread-pools-boost-performance-9x/
 * https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/
@@ -296,14 +291,20 @@ Reference links
 * https://nginx.org/r/ssl_engine (`openssl engine -t `)
 * https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
 * https://www.nginx.com/blog/tuning-nginx/
+* https://github.com/intel/asynch_mode_nginx
+* https://openresty.org/download/agentzh-nginx-tutorials-en.html
 * https://www.maxcdn.com/blog/nginx-application-performance-optimization/
-* https://www.linode.com/docs/websites/nginx/configure-nginx-for-optimized-performance
-* https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/
+* https://www.nginx.com/blog/nginx-se-linux-changes-upgrading-rhel-6-6/
 * https://medium.freecodecamp.org/a8afdbfde64d
 * https://medium.freecodecamp.org/secure-your-web-application-with-these-http-headers-fd66e0367628
-* https://openresty.org/download/agentzh-nginx-tutorials-en.html
-* https://github.com/intel/asynch_mode_nginx
-* https://github.com/leandromoreira/linux-network-performance-parameters
+* https://gist.github.com/CMCDragonkai/6bfade6431e9ffb7fe88
+* https://gist.github.com/denji/9130d1c95e350c58bc50e4b3a9e29bf4
+* https://8gwifi.org/docs/nginx-secure.jsp
+* http://www.codestance.com/tutorials-archive/nginx-tuning-for-best-performance-255
+* https://ospi.fi/blog/centos-7-raise-nofile-limit-for-nginx.html
+* https://www.linode.com/docs/websites/nginx/configure-nginx-for-optimized-performance
+* https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/
+
 
 Static analyzers
 ----------------
