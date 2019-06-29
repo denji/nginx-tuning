@@ -271,7 +271,7 @@ Happy Hacking!
 Reference links
 ---------------
 
-* __https://github.com/trimstray/nginx-quick-reference__
+* __https://github.com/trimstray/nginx-admins-handbook__
 * __https://github.com/GrrrDog/weird_proxies/wiki/nginx__
 * __https://github.com/h5bp/server-configs-nginx__
 * __https://github.com/leandromoreira/linux-network-performance-parameters__
