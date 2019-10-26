@@ -304,6 +304,7 @@ Reference links
 * https://ospi.fi/blog/centos-7-raise-nofile-limit-for-nginx.html
 * https://www.linode.com/docs/websites/nginx/configure-nginx-for-optimized-performance
 * https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/
+* https://gist.github.com/kekru/c09dbab5e78bf76402966b13fa72b9d2
 
 
 Static analyzers
