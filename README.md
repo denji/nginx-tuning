@@ -1,11 +1,11 @@
 NGINX Tuning For Best Performance
 =================================
 
-For this configuration you can use web server you like, i decided, because i work mostly with it to use nginx.
+For this configuration you can use web server you like, I decided, because I work mostly with it to use nginx.
 
-Generally, properly configured nginx can handle up to 400K to 500K requests per second (clustered), most what i saw is 50K to 80K (non-clustered) requests per second and 30% CPU load, course, this was `2 x Intel Xeon` with HyperThreading enabled, but it can work without problem on slower machines.
+Generally, properly configured nginx can handle up to 400K to 500K requests per second (clustered). Most what I saw is 50K to 80K (non-clustered) requests per second and 30% CPU load, of course, this was `2 x Intel Xeon` with HyperThreading enabled, but it can work without problem on slower machines.
 
-__You must understand that this config is used in testing environment and not in production so you will need to find a way to implement most of those features best possible for your servers.__
+__You must understand that this config is used in a testing environment and not in production, so you will need to find a way to implement most of those features as best possible for your servers.__
 
 * [Stable version NGINX (deb/rpm)](https://nginx.org/en/linux_packages.html#stable)
 * [Mainline version NGINX (deb/rpm)](https://nginx.org/en/linux_packages.html#mainline)
@@ -109,21 +109,21 @@ http {
 }
 ```
 
-Now you can save config and run bottom [command](https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/#stopping-or-restarting-nginx)
+Now you can save the configuration and run the below [command](https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/#stopping-or-restarting-nginx)
 
 ```
 nginx -s reload
 /etc/init.d/nginx start|restart
 ```
 
-If you wish to test config first you can run
+If you wish to test the configuration first you can run
 
 ```
 nginx -t
 /etc/init.d/nginx configtest
 ```
 
-Just For Security Reason
+Just For Security Reasons
 ------------------------
 
 ```nginx
@@ -133,7 +133,7 @@ server_tokens off;
 NGINX Simple DDoS Defense
 -------------------------
 
-This is far away from secure DDoS defense but can slow down some small DDoS. Those configs are also in test environment and you should do your values.
+This is far away from a secure DDoS defense but can slow down some small DDoS. This configuration is for a testing environment and you should use your own values.
 
 ```nginx
 # limit the number of connections per single IP
@@ -165,7 +165,7 @@ client_body_timeout   3m;
 client_header_timeout 3m;
 ```
 
-Now you can do again test config
+Now you can test the configuration again
 
 ```bash
 nginx -t # /etc/init.d/nginx configtest
@@ -177,13 +177,13 @@ nginx -s reload
 /etc/init.d/nginx reload|restart
 ```
 
-You can test this configuration with `tsung` and when you are satisfied with result you can hit `Ctrl+C` because it can run for hours.
+You can test this configuration with `tsung` and when you are satisfied with the result you can hit `Ctrl+C` because it can run for hours.
 
 Increase The Maximum Number Of Open Files (`nofile` limit) – Linux
 -----------------------------------------------
 
-Two ways to raise the nofile/max open files/file descriptors/file handles limit for NGINX in RHEL/CentOS 7+.
-With NGINX running, checking current limit on master process
+There are two ways to raise the nofile/max open files/file descriptors/file handles limit for NGINX in RHEL/CentOS 7+.
+With NGINX running, check the current limit on the master process
 
     $ cat /proc/$(cat /var/run/nginx.pid)/limits | grep open.files
     Max open files            1024                 4096                 files
@@ -231,7 +231,7 @@ DoS [HTTP/1.1 and above: Range Requests](https://tools.ietf.org/html/rfc7233#sec
 ----------------------------------------
 
 By default [`max_ranges`](https://nginx.org/r/max_ranges) is not limited.
-DoS attacks can many Range-Requests (Impact on stability I/O).
+DoS attacks can create many Range-Requests (Impact on stability I/O).
 
 Socket Sharding in NGINX 1.9.1+ (DragonFly BSD and Linux 3.9+)
 -------------------------------------------------------------------
@@ -245,7 +245,7 @@ Socket Sharding in NGINX 1.9.1+ (DragonFly BSD and Linux 3.9+)
 [Thread Pools](https://nginx.org/r/thread_pool) in NGINX Boost Performance 9x! (Linux)
 --------------
 
-[Multi-threaded](https://nginx.org/r/aio) sending of files is currently supported only Linux.
+[Multi-threaded](https://nginx.org/r/aio) sending of files is currently supported only in Linux.
 Without [`sendfile_max_chunk`](https://nginx.org/r/sendfile_max_chunk) limit, one fast connection may seize the worker process entirely.
 
 Selecting an upstream based on SSL protocol version
