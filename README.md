@@ -288,6 +288,7 @@ Reference links
 * https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers/
 * https://www.nginx.com/blog/smart-efficient-byte-range-caching-nginx/
 * https://www.nginx.com/blog/nginx-high-performance-caching/
+* https://www.nginx.com/resources/wiki/start/topics/examples/x-accel/
 * https://nginx.org/r/pcre_jit
 * https://nginx.org/r/ssl_engine (`openssl engine -t `)
 * https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
