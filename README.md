@@ -63,9 +63,6 @@ http {
     # send headers in one piece, it is better than sending them one by one
     tcp_nopush on;
 
-    # don't buffer data sent, good for small data bursts in real time
-    #tcp_nodelay on;
-
     # reduce the data that needs to be sent over network -- for testing environment
     gzip on;
     # gzip_static on;
