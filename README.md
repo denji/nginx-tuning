@@ -61,7 +61,7 @@ http {
     sendfile on;
 
     # send headers in one piece, it is better than sending them one by one
-    tcp_nopush on;
+    #tcp_nopush on;
 
     # don't buffer data sent, good for small data bursts in real time
     tcp_nodelay on;
