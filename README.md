@@ -269,7 +269,7 @@ Reference links
 ---------------
 
 * __https://github.com/trimstray/nginx-admins-handbook__
-* __https://github.com/GrrrDog/weird_proxies#weird-proxies__
+* __https://github.com/GrrrDog/weird_proxies__
 * __https://github.com/h5bp/server-configs-nginx__
 * __https://github.com/leandromoreira/linux-network-performance-parameters__
 * https://github.com/nginx-boilerplate/nginx-boilerplate
