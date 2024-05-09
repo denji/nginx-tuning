@@ -64,6 +64,8 @@ http {
     tcp_nopush on;
 
     # don't buffer data sent, good for small data bursts in real time
+    # https://brooker.co.za/blog/2024/05/09/nagle.html
+    # https://news.ycombinator.com/item?id=10608356
     #tcp_nodelay on;
 
     # reduce the data that needs to be sent over network -- for testing environment
