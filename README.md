@@ -313,7 +313,7 @@ Reference links
 
 Static analyzers
 ----------------
-* https://github.com/yandex/gixy
+* https://github.com/dvershinin/gixy
 
 Syntax highlighting
 -------------------
